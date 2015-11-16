@@ -25,13 +25,10 @@ void setup() {
 }
 
 void draw() {
-  background(0, 0, 100); 
-  
-  // Draw Line
-  stroke(50);
-  line(linex, liney, linex2, liney2);
+   background(0, 0, 100); 
 
   // Make Circle Black
+  noStroke();
   fill(0); 
  
   // Make Circle
@@ -39,7 +36,6 @@ void draw() {
   ellipse(x2, y2, 75, 75);
 
   // Make Circle Move
-  
   // First Circle
   x = x + xSpeed;
   y = y + ySpeed;
@@ -48,7 +44,10 @@ void draw() {
   x2 = x2 + x2Speed;
   y2 = y2 + y2Speed;
   
-
+  // Drawing the line
+  stroke(390, 90, 90);
+  line(linex, liney, linex2, liney2);
+  
   // Reset Circle if it hits the edge of the screen
   // First Circle
   if (x < 0) {    // Left Edge
@@ -78,12 +77,14 @@ void draw() {
   }
   
   //Draw lines between circles when touching
-  if ( x == x2 && y == y2 ) {
+  if ( (x < x2 + 50 && x > x2 -50) && (y < y2 + 50 && y > y2 -50) ) {
     
     linex = x;
     liney = y;
     linex2 = x2;
     liney2 = y2;
+    
+    println("yes");
   }
   
   
