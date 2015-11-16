@@ -1,3 +1,9 @@
+// Lines
+float linex;
+float liney;
+float linex2;
+float liney2;
+
 // First Circle
 float x = 250;
 float y = 300;
@@ -20,10 +26,14 @@ void setup() {
 
 void draw() {
   background(0, 0, 100); 
+  
+  // Draw Line
+  stroke(50);
+  line(linex, liney, linex2, liney2);
 
   // Make Circle Black
   fill(0); 
-
+ 
   // Make Circle
   ellipse(x, y, 50, 50);
   ellipse(x2, y2, 75, 75);
@@ -40,7 +50,6 @@ void draw() {
   
 
   // Reset Circle if it hits the edge of the screen
-
   // First Circle
   if (x < 0) {    // Left Edge
     xSpeed = random(10, 20);
@@ -54,7 +63,6 @@ void draw() {
   if (y < 0) {    // Top Edge
     ySpeed = random(10, 20);
   }
-  
   // Second Circle
   if (x2 < 0) {    // Left Edge
     x2Speed = random(10, 20);
@@ -67,6 +75,15 @@ void draw() {
   }
   if (y2 < 0) {    // Top Edge
     y2Speed = random(10, 20);
+  }
+  
+  //Draw lines between circles when touching
+  if ( x == x2 && y == y2 ) {
+    
+    linex = x;
+    liney = y;
+    linex2 = x2;
+    liney2 = y2;
   }
   
   
