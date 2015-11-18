@@ -33,8 +33,8 @@ void draw() {
   fill(0, 0, 0, 0); 
 
   // Make Circle
-  ellipse(x, y, 50, 50);
-  ellipse(x2, y2, 75, 75);
+  ellipse(x, y, 90, 90);
+  ellipse(x2, y2, 90, 90);
 
   // Make Circle Move
   // First Circle
