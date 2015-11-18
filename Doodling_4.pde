@@ -1,5 +1,5 @@
-//Change Colours
-float hue = 0;
+////Change Colours
+//float hue = 0;
 
 // Lines
 float linex;
@@ -8,8 +8,8 @@ float linex2;
 float liney2;
 
 // First Circle
-float x = 250;
-float y = 300;
+float x;
+float y;
 float xSpeed = 2.5;
 float ySpeed = 2.5;
 
@@ -26,7 +26,16 @@ void setup() {
 
   colorMode(HSB, 360, 100, 100, 100);
   
-  background(0, 0, 100);
+  background(0, 0, 0);
+  
+  // pick a random starting position for the first circle
+  x = random(400, 0);
+  y = random(0, 400);
+  
+  // pick a random starting position for the second circle
+  x2 = random(400, 0);
+  y2 = random(0, 400);
+  
 }
 
 void draw() {
@@ -36,8 +45,8 @@ void draw() {
   fill(0, 0, 0, 0); 
 
   // Make Circle
-  ellipse(x, y, 90, 90);
-  ellipse(x2, y2, 90, 90);
+  ellipse(x, y, 200, 200);
+  ellipse(x2, y2, 200, 200);
 
   // Make Circle Move
   // First Circle
@@ -49,7 +58,7 @@ void draw() {
   y2 = y2 + y2Speed;
 
   // Drawing the line
-  stroke(random(0,360), 90, 90);
+  stroke(205 , 90, 90);
   line(linex, liney, linex2, liney2);
 
   // Reset Circle if it hits the edge of the screen
