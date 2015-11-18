@@ -1,3 +1,6 @@
+//Change Colours
+float hue = 0;
+
 // Lines
 float linex;
 float liney;
@@ -46,7 +49,7 @@ void draw() {
   y2 = y2 + y2Speed;
 
   // Drawing the line
-  stroke(390, 90, 90);
+  stroke(random(0,360), 90, 90);
   line(linex, liney, linex2, liney2);
 
   // Reset Circle if it hits the edge of the screen
