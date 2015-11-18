@@ -21,16 +21,17 @@ void setup() {
   // Set Canvas
   size(400, 400);
 
-  colorMode(HSB, 360, 100, 100);
+  colorMode(HSB, 360, 100, 100, 100);
+  
+  background(0, 0, 100);
 }
 
 void draw() {
-   background(0, 0, 100); 
-
+  
   // Make Circle Black
   noStroke();
-  fill(0); 
- 
+  fill(0, 0, 0, 0); 
+
   // Make Circle
   ellipse(x, y, 50, 50);
   ellipse(x2, y2, 75, 75);
@@ -39,53 +40,51 @@ void draw() {
   // First Circle
   x = x + xSpeed;
   y = y + ySpeed;
-  
+
   // Second Circle
   x2 = x2 + x2Speed;
   y2 = y2 + y2Speed;
-  
+
   // Drawing the line
   stroke(390, 90, 90);
   line(linex, liney, linex2, liney2);
-  
+
   // Reset Circle if it hits the edge of the screen
   // First Circle
   if (x < 0) {    // Left Edge
-    xSpeed = random(10, 20);
+    xSpeed = random(2, 4);
   }
   if (y > 400) {    // Bottom Edge
-    ySpeed = random(-10, -20);
+    ySpeed = random(-2, -4);
   }
   if (x > 400) {    // Right Edge
-    xSpeed = random(-10, -20);
+    xSpeed = random(-2, -4);
   }
   if (y < 0) {    // Top Edge
-    ySpeed = random(10, 20);
+    ySpeed = random(2, 4);
   }
   // Second Circle
   if (x2 < 0) {    // Left Edge
-    x2Speed = random(10, 20);
+    x2Speed = random(2, 4);
   }
   if (y2 > 400) {    // Bottom Edge
-    y2Speed = random(-10, -20);
+    y2Speed = random(-2, -4);
   }
   if (x2 > 400) {    // Right Edge
-    x2Speed = random(-10, -20);
+    x2Speed = random(-2, -4);
   }
   if (y2 < 0) {    // Top Edge
-    y2Speed = random(10, 20);
+    y2Speed = random(2, 4);
   }
-  
+
   //Draw lines between circles when touching
   if ( (x < x2 + 50 && x > x2 -50) && (y < y2 + 50 && y > y2 -50) ) {
-    
+
     linex = x;
     liney = y;
     linex2 = x2;
     liney2 = y2;
-    
+
     println("yes");
   }
-  
-  
 }
